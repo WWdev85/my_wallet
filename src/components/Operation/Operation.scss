@@ -1,0 +1,46 @@
+@import '../../assets/scss/variables.scss';
+
+.operation {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    font-size: 14px;
+
+    @media(min-width: 1024px) {
+        font-size: 16px;
+    }
+
+    .operation__group {
+        padding: 0;
+
+        .group__name {
+            font-size: 14px;
+            color: $primaryColor;
+
+            @media(min-width: 1024px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .operation__name {
+        font-weight: bold;
+    }
+
+    .operation__date {
+        color: $primaryColor;
+    }
+
+    .operation__amount {
+        color: red;
+        font-weight: bold;
+    }
+
+    .income {
+        color: green;
+    }
+}

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppHeader, Navigation } from './components';
-import { Main } from './pages';
+import { Main, Operations } from './pages';
 import './App.scss';
+
 
 
 export interface RouteInterface {
@@ -20,13 +21,6 @@ const routes: RouteInterface[] = [
   }
 ]
 
-const appRoutes = routes.map((route: RouteInterface) => {
-  return (
-    <Route key={route.path} path={route.path} element={<Main />} />
-  )
-})
-
-
 
 function App() {
   return (
@@ -35,7 +29,8 @@ function App() {
       <Router>
         <Navigation routes={routes} />
         <Routes>
-          {appRoutes}
+          <Route path='/main' element={<Main />} />
+          <Route path='/operations' element={<Operations />} />
         </Routes>
       </Router>
     </div>
