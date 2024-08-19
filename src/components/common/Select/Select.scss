@@ -1,0 +1,80 @@
+@import '../../../assets/scss/variables.scss';
+
+.select {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 90%;
+    margin: 0 auto;
+    //font-size: 14px;
+
+    @media(min-width: 700px) {
+        flex-basis: 44%;
+    }
+
+    .label {
+        margin-top: 20px;
+        color: white;
+        text-transform: capitalize;
+        font-size: 12px;
+
+    }
+
+    .dropdown {
+        // box-sizing: border-box;
+        position: relative;
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        text-transform: capitalize;
+
+        &__trigger {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            justify-content: space-between;
+        }
+
+        &__content {
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            background-color: white;
+            border: 1px solid BLACK;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    }
+
+
+}
+
+
+
+.trigger {
+    &__icon {
+        border-left: 1px solid black;
+        width: 40px;
+        margin-left: 20px;
+
+        svg {
+            color: black !important;
+        }
+    }
+}
+
+
+.option:hover {
+    background-color: lighten($primaryColor, 30%);
+    color: white;
+}
+
+.down-arrow {
+    position: absolute;
+    right: 10px;
+    fill: $primaryColor
+}

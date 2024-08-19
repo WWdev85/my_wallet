@@ -1,1 +1,2 @@
-export * from './Main/Main'
+export * from './Main/Main';
+export * from './Operations/Operations';

@@ -1,0 +1,53 @@
+@import '../../assets/scss/variables.scss';
+
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &__background {
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: white, $alpha: 0.6);
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px, solid $primaryColor;
+        height: 600px;
+        width: 95%;
+        max-width: 1024px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+.modal-content {
+    &__title {
+        width: 100%;
+        height: 50px;
+        padding: 5px 20px;
+        position: relative;
+        line-height: 50px;
+        font-weight: bold;
+        color: white;
+        font-size: 18px;
+        background-color: $primaryColor;
+
+
+        .close {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+}
