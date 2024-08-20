@@ -8,12 +8,11 @@
     //font-size: 14px;
 
     @media(min-width: 700px) {
-        flex-basis: 44%;
+        //flex-basis: 44%;
     }
 
     .label {
         margin-top: 20px;
-        color: white;
         text-transform: capitalize;
         font-size: 12px;
 
@@ -22,6 +21,7 @@
     .dropdown {
         // box-sizing: border-box;
         position: relative;
+        border: 1px solid black;
         display: block;
         background-color: white;
         border-radius: 5px;

@@ -2,19 +2,31 @@
 
 .operations {
 
-    max-width: 1920px;
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 
     &__list {
         padding: 0;
         width: 90%;
-        margin: 0 auto;
+        height: 60vh;
+        margin: 60px auto;
+        list-style: none;
+
+        li {
+            padding: 10px 20px;
+        }
+
+        li:nth-child(even) {
+            background-color: #eeeeee;
+
+        }
     }
 
     &__add-button {
         position: absolute;
         right: 30px;
-        bottom: 100px;
+        bottom: 40px;
         fill: $primaryColor;
         font-size: 50px;
         cursor: pointer;
