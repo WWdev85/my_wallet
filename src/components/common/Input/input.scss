@@ -7,22 +7,21 @@
     margin: 0 auto;
 
     @media(min-width: 700px) {
-        width: 44%;
+        // width: 44%;
     }
 
     .label {
         margin-top: 20px;
-        color: white;
         font-size: 12px;
         text-transform: capitalize;
     }
 
     .input {
         height: 30px;
+        outline: none;
+        border: 1px solid black;
         border-radius: 5px;
         padding: 0 4px;
         font-family: $primaryFont;
-
-
     }
 }

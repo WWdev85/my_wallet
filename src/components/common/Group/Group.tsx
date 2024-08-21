@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 import { OperationGroup } from '../../../types';
-import { FaSuitcase, FaUtensils } from "react-icons/fa";
+import { FaBaseballBall, FaMoneyBillWave, FaSuitcase, FaUtensils } from "react-icons/fa";
 
 import './Group.scss';
 
@@ -21,6 +21,12 @@ export const Group = (props: GroupProps) => {
         case 'salary':
             icon = <FaSuitcase style={{ backgroundColor: `${group.color}` }} className='group__icon' />
             break;
+        case 'entertainment':
+            icon = <FaBaseballBall style={{ backgroundColor: `${group.color}` }} className='group__icon' />
+            break;
+        case 'payment':
+            icon = <FaMoneyBillWave style={{ backgroundColor: `${group.color}` }} className='group__icon' />
+            break;    
 
     }
     return (

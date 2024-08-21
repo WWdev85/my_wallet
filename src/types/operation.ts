@@ -14,7 +14,7 @@ export interface OperationGroup {
 }
 
 export interface Operation {
-    id: string,
+    id?: string,
     name: string,
     type: OperationType,
     group: string,
