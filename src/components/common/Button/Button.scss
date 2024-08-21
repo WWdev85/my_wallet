@@ -1,0 +1,20 @@
+@import '../../../assets/scss/variables.scss';
+
+.button {
+    height: 38px;
+
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: none;
+    background-color: $primaryColor;
+    color: white;
+    cursor: pointer;
+    box-shadow: 8px 8px 24px -17px rgba(66, 68, 90, 1);
+}
+
+.disabled {
+    cursor: auto;
+    opacity: 50%;
+}

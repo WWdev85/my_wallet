@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AppHeader, Navigation } from './components';
+import { Main, Operations } from './pages';
+import './App.scss';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
+
+
+export interface RouteInterface {
+  name: string;
+  path: string;
+}
+
+const routes: RouteInterface[] = [
+  {
+    name: 'strona główna',
+    path: '/main'
+  },
+  {
+    name: 'operacje',
+    path: '/operations'
+  }
+]
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+        <AppHeader />
+        <Router>
+          <Navigation routes={routes} />
+          <Routes>
+            <Route path='/main' element={<Main />} />
+            <Route path='/operations' element={<Operations />} />
+          </Routes>
+        </Router>
+      </Provider>
     </div>
   );
 }
