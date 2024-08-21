@@ -14,10 +14,11 @@ interface InputProps {
     value: string | number;
     onChangeFn: Function;
     className?: string;
+    placeholder?: string;
 }
 
 export const Input = (props: InputProps) => {
-    const { type, label, value, onChangeFn, className } = props;
+    const { type, label, value, onChangeFn, className, placeholder } = props;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let value: React.ChangeEvent<HTMLInputElement> | string | number
@@ -28,7 +29,7 @@ export const Input = (props: InputProps) => {
     return (
         <div className={`input-container ${className}`}>
             {label && <label className='label' htmlFor="">{label}</label>}
-            <input className='input' type={type} min="0" value={value} step="0.01" onChange={handleChange} />
+            <input className='input' type={type} min="0" value={value} step="0.01" onChange={handleChange} placeholder={placeholder} />
         </div>
     )
 }

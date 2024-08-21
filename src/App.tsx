@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppHeader, Navigation } from './components';
 import { Main, Operations } from './pages';
 import './App.scss';
@@ -14,7 +14,7 @@ export interface RouteInterface {
 
 const routes: RouteInterface[] = [
   {
-    name: 'strona główna',
+    name: 'Podsumowanie',
     path: '/main'
   },
   {
@@ -25,6 +25,7 @@ const routes: RouteInterface[] = [
 
 
 function App() {
+
   return (
     <div className="App">
       <Provider store={store}>
@@ -32,6 +33,7 @@ function App() {
         <Router>
           <Navigation routes={routes} />
           <Routes>
+            <Route path="/" element={<Navigate to="/operations" />} />
             <Route path='/main' element={<Main />} />
             <Route path='/operations' element={<Operations />} />
           </Routes>
