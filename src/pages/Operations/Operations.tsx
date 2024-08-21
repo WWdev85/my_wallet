@@ -35,22 +35,17 @@ export const Operations = () => {
         setIsModalOpened(() => !isModalOpened)
     }
 
-    useEffect(() => {
-        dispatch(setBalance())
-    }, [operations])
 
     let periodBalance = 0;
 
     const filterOperations = () => {
         const t1 = startDate.setHours(0, 0, 0, 0) as unknown as Date
         const t2 = endDate.setHours(0, 0, 0, 0) as unknown as Date
-        let pBalance = 0;
         return operations.filter((operation) => {
             const t3 = operation.date.setHours(0, 0, 0, 0) as unknown as Date
             return (t3 >= t1 && t3 <= t2)
 
         }).filter((operation) => {
-            console.log(operation)
             return (
                 operation.name.toLocaleLowerCase().includes(search.toLowerCase()) || groups.find((group) => group.label.toLocaleLowerCase().includes(search.toLowerCase()))?.value === operation.group
             )
