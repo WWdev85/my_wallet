@@ -39,12 +39,16 @@ export const balanceSlice = createSlice({
             window.localStorage.setItem('balance', state.balance as unknown as string)
         },
         setOperations: (state, action: SetOperations) => {
-            const op = JSON.parse(action.payload)
-            for (let p of op) {
-                p.date = new Date(p.date)
+            let op: Operation[] = []
+            op = JSON.parse(action.payload) as Operation[]
+            if(op !== null){
+                for (let p of op) {
+                    p.date = new Date(p.date)
+                }
+                state.operations = op
+                setBalance()
             }
-            state.operations = op
-            setBalance()
+            
 
         },
         addOperation: (state, action: AddOperation) => {

@@ -33,8 +33,8 @@ export const Operations = () => {
     }
 
     useEffect(() => {
-
-    })
+        dispatch(setBalance())
+    },[operations])
 
     let periodBalance = 0;
 
